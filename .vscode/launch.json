@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "GDScript",
+        "type": "gdscript",
+        "request": "launch",
+        "program": "${workspaceFolder}/**/*.gd", // Use wildcard to match all .gd files
+        "stopOnEntry": true
+      }
+    ]
+  }

@@ -1,4 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dl0ds55f0i62d"]
+[gd_scene load_steps=9 format=3 uid="uid://dl0ds55f0i62d"]
+
+[ext_resource type="Script" path="res://MyCam.gd" id="1_1eelj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xcjh4"]
 
@@ -30,30 +32,31 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="Ground" type="MeshInstance3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 1.79218, -0.887738, 0, 0.887738, 1.79218, 0.00296736, -0.0330923, -0.0673198)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_xcjh4")
 material_overlay = SubResource("StandardMaterial3D_tpwar")
 mesh = SubResource("PlaneMesh_qvhch")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_22u30")
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
-radius = 0.0217157
-
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.922848, 0.385165, 0, -0.385165, 0.922848, 0, 1.10448, 3.44115)
+transform = Transform3D(1, 0, 0, 0, 0.336504, 0.941682, 0, -0.941682, 0.336504, 0, 3.25813, 1.38715)
 current = true
 fov = 70.8903
 near = 0.2
 far = 100.0
+script = ExtResource("1_1eelj")
 
 [node name="PlayerGreen" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.443869, 0.896092, 0, -0.896092, 0.443869, -1.49703, 0.062776, -0.0198325)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.75, 0.25, 0)
 size = Vector3(0.1, 0.5, 0.1)
 material = SubResource("StandardMaterial3D_t2vei")
 
 [node name="PlayerBlue" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.443869, 0.896092, 0, -0.896092, 0.443869, 1.50297, 0.062776, -0.0198325)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.75, 0.25, 0)
 size = Vector3(0.1, 0.5, 0.1)
 material = SubResource("StandardMaterial3D_bmkap")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.25, 0)
+radius = 0.0217157
